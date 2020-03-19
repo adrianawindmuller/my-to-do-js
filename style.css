@@ -1,0 +1,42 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("./images/flores.png");
+    background-position: center;
+}
+
+#txtTarefa{
+    font-size: 18px;
+}
+
+.quadro-tarefa {
+    padding: 10px 10px 0px 10px;
+}
+
+.quadro-geral {
+    background-color: white;
+    height: 500px;
+    margin-top: 50px;
+    overflow-y: auto;
+    border: solid 1px #cccccc;
+    margin-bottom: 50px;
+    border-radius: 6px;
+}
+
+.chkConcluir {
+    width: 22px;
+    height: 30px;
+    float: left;
+    margin-right: 8px !important;
+}
+
+.btn {
+    float: right;
+}
+
+ul li span {
+    font-size: 18px;
+}
+
+.editar-tarefa{
+    font-size: 18px;
+}
