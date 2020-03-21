@@ -4,6 +4,12 @@ body {
     background-position: center;
 }
 
+.logo-tipo{
+    width: 20%;
+    text-align: center;
+    padding: 20px;
+}
+
 #txtTarefa{
     font-size: 18px;
 }
@@ -15,11 +21,11 @@ body {
 .quadro-geral {
     background-color: white;
     height: 500px;
-    margin-top: 50px;
     overflow-y: auto;
     border: solid 1px #cccccc;
     margin-bottom: 50px;
     border-radius: 6px;
+    opacity: 0.96;
 }
 
 .chkConcluir {
