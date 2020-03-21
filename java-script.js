@@ -1,17 +1,17 @@
 onLoad = () => document.getElementById('txtTarefa').focus();
 
 function criarTarefa() {
-    if (!inputEstaVazio()) {  // ! - not 
+    if (!textoTarefaEstaVazio()) {  // ! - not 
         let descricaoTarefa = document.getElementById('txtTarefa').value;
         let li = criarLi(descricaoTarefa);
 
-        criarInputTarefa(li, descricaoTarefa);
+        alterarTextoTarefa(li, descricaoTarefa);
         criarCheckBox(li);
         criarLixeira(li);
     }
 }
 
-function enterTarefa(event) {
+function presionarEnterTarefa(event) {
     if (event.keyCode == 13) {
         criarTarefa();
         document.getElementById('txtTarefa').value = ""
@@ -19,7 +19,7 @@ function enterTarefa(event) {
     }
 }
 
-function inputEstaVazio() {
+function textoTarefaEstaVazio() {
     let tarefa = document.getElementById('txtTarefa').value;
     return (tarefa.length == 0);
 }
@@ -27,7 +27,7 @@ function inputEstaVazio() {
 function criarLi(descricaoTarefa) {
     let span = document.createElement('span');
     span.append(descricaoTarefa);
-    span.onclick = function () { alternarModoEdicao(true, li) }
+    span.onclick = function () { alternarModoEdicaoTarefa(true, li) }
 
     let li = document.createElement('li')
     li.append(span);
@@ -38,23 +38,25 @@ function criarLi(descricaoTarefa) {
     return li;
 }
 
-function criarInputTarefa(li, descricaoTarefa) {
+function alterarTextoTarefa(li, descricaoTarefa) {
     let inputTexto = document.createElement('input');
     inputTexto.value = descricaoTarefa;
     inputTexto.classList.add('editar-tarefa');
 
     inputTexto.onkeypress = function (event) {
         if (event.keyCode == 13) {
-            alternarModoEdicao(false, li);
-            li.querySelector('span').append(inputTexto.value);
+            alternarModoEdicaoTarefa(false, li);
+            let Span = li.querySelector('span');
+            Span.innerText = "";
+            Span.append(inputTexto.value);
         }
     }
     li.appendChild(inputTexto);
 
-    alternarModoEdicao(false, li);
+    alternarModoEdicaoTarefa(false, li);
 }
 
-function alternarModoEdicao(editar, li) {
+function alternarModoEdicaoTarefa(editar, li) {
     let editarTarefa = li.querySelector('.editar-tarefa');
     let span = li.querySelector('span');
 
@@ -79,10 +81,10 @@ function criarCheckBox(li) {
     chkConcluir.setAttribute('id', idTarefa++)
     li.appendChild(chkConcluir);
     chkConcluir.classList.add('chkConcluir');
-    chkConcluir.onclick = function () { alterarTarefa(li) }
+    chkConcluir.onclick = function () { concluiTarefa(li) }
 }
 
-function alterarTarefa(li) {
+function concluiTarefa(li) {
     let concluido = li.querySelector('.chkConcluir').checked;
 
     if (concluido) {
@@ -112,3 +114,5 @@ function excluirTarefa(li) {
         li.parentNode.removeChild(li);
     }
 }
+
+//Aqui começa a dragdrop
