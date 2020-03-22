@@ -1,4 +1,12 @@
-onLoad = () => document.getElementById('txtTarefa').focus();
+function onLoad () { 
+    document.getElementById('txtTarefa').focus();
+    
+    let ulTarefa = document.querySelector('#ul-lista-tarefas')
+    new Sortable(ulTarefa, {
+        animation: 150,
+        ghostClass: 'blue-background-class'
+    }); 
+}
 
 function criarTarefa() {
     if (!textoTarefaEstaVazio()) {  // ! - not 
@@ -8,6 +16,7 @@ function criarTarefa() {
         alterarTextoTarefa(li, descricaoTarefa);
         criarCheckBox(li);
         criarLixeira(li);
+
     }
 }
 
@@ -115,4 +124,3 @@ function excluirTarefa(li) {
     }
 }
 
-//Aqui começa a dragdrop
