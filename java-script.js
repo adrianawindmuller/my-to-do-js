@@ -1,11 +1,15 @@
-function onLoad () { 
+function onLoad() {
     document.getElementById('txtTarefa').focus();
-    
+
     let ulTarefa = document.querySelector('#ul-lista-tarefas')
     new Sortable(ulTarefa, {
         animation: 150,
-        ghostClass: 'blue-background-class'
-    }); 
+        ghostClass: 'blue-background-class',
+        forceFallback: true,
+        onChoose: function (evt) { $("#ul-lista-tarefas").css('cursor', 'grab'); },
+        onStart: function (evt) { $("#ul-lista-tarefas").css('cursor', 'grabbing'); },
+        onEnd: function (evt) { $("#ul-lista-tarefas").css('cursor', 'grab'); },
+    });
 }
 
 function criarTarefa() {
@@ -40,7 +44,7 @@ function criarLi(descricaoTarefa) {
 
     let li = document.createElement('li')
     li.append(span);
-    li.classList.add('list-group-item');
+    li.classList.add('list-group-item', 'cursor');
 
     document.getElementById('ul-lista-tarefas').appendChild(li);
 
