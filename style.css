@@ -47,6 +47,7 @@ ul li span {
 
 .list-group-item{
     margin-top: 8px;
+    padding: 10px 5px !important;
 }
 
 li:hover {
@@ -56,6 +57,10 @@ ul:hover{
     cursor: grab;
 }
 
-.btn-outline-danger{
+.btn-sm{
     border: none !important;
+}
+
+.botao-editar{
+    margin-right: 8px;
 }

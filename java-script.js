@@ -1,7 +1,10 @@
 function onLoad() {
     document.getElementById('txtTarefa').focus();
+    arrastarTarefa();   
+}
 
-    let ulTarefa = document.querySelector('#ul-lista-tarefas')
+function arrastarTarefa(){
+    let ulTarefa = document.querySelector('#ul-lista-tarefas');
     new Sortable(ulTarefa, {
         animation: 150,
         ghostClass: 'blue-background-class',
@@ -20,6 +23,7 @@ function criarTarefa() {
         alterarTextoTarefa(li, descricaoTarefa);
         criarCheckBox(li);
         criarLixeira(li);
+        criarEditarTarefa(li);
 
     }
 }
@@ -110,21 +114,33 @@ function concluiTarefa(li) {
 }
 
 function criarLixeira(li) {
-    let botao = document.createElement('button');
-    botao.classList.add('btn-outline-danger', 'btn', 'btn-sm');
+    let btnLixeira = document.createElement('button');
+    btnLixeira.classList.add('btn-outline-info', 'btn', 'btn-sm');
 
     let icone = document.createElement('i');
     icone.classList.add('far', 'fa-trash-alt');
 
-    botao.appendChild(icone);
-    li.appendChild(botao);
+    btnLixeira.appendChild(icone);
+    li.appendChild(btnLixeira);
 
-    botao.onclick = function () { excluirTarefa(li) }
+    btnLixeira.onclick = function () { excluirTarefa(li) }
 }
 
 function excluirTarefa(li) {
-    if (confirm('Tem certeza?')) {
+    if (confirm('Tem certeza que deseja excluir esta tarefa?')) {
         li.parentNode.removeChild(li);
     }
 }
 
+function criarEditarTarefa(li){
+    let btnEditar = document.createElement('button');
+    btnEditar.classList.add('btn-outline-info', 'btn', 'btn-sm','botao-editar');
+
+    let icone = document.createElement('i')
+    icone.classList.add('fas', 'fa-pencil-alt');
+
+    btnEditar.appendChild(icone);
+    li.appendChild(btnEditar)
+
+    btnEditar.onclick = function () {alternarModoEdicaoTarefa(true, li)}
+}
