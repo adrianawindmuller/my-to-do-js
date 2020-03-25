@@ -48,7 +48,7 @@ function criarLi(descricaoTarefa) {
 
     let li = document.createElement('li')
     li.append(span);
-    li.classList.add('list-group-item', 'cursor');
+    li.classList.add('list-group-item', 'cursor','form-inline');
 
     document.getElementById('ul-lista-tarefas').appendChild(li);
 
@@ -58,8 +58,7 @@ function criarLi(descricaoTarefa) {
 function alterarTextoTarefa(li, descricaoTarefa) {
     let inputTexto = document.createElement('input');
     inputTexto.value = descricaoTarefa;
-    inputTexto.classList.add('editar-tarefa');
-
+    inputTexto.classList.add('editar-tarefa', 'form-control');
     inputTexto.onkeypress = function (event) {
         if (event.keyCode == 13) {
             alternarModoEdicaoTarefa(false, li);
@@ -115,7 +114,7 @@ function concluiTarefa(li) {
 
 function criarLixeira(li) {
     let btnLixeira = document.createElement('button');
-    btnLixeira.classList.add('btn-outline-info', 'btn', 'btn-sm');
+    btnLixeira.classList.add('btn-outline-primary', 'btn', 'btn-sm');
 
     let icone = document.createElement('i');
     icone.classList.add('far', 'fa-trash-alt');
@@ -134,7 +133,7 @@ function excluirTarefa(li) {
 
 function criarEditarTarefa(li){
     let btnEditar = document.createElement('button');
-    btnEditar.classList.add('btn-outline-info', 'btn', 'btn-sm','botao-editar');
+    btnEditar.classList.add('btn-outline-primary', 'btn', 'btn-sm','botao-editar');
 
     let icone = document.createElement('i')
     icone.classList.add('fas', 'fa-pencil-alt');

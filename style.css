@@ -4,21 +4,16 @@ body {
     background-position: center;
 }
 
-.logo-tipo{
-    width: 20%;
-    text-align: center;
-    padding: 20px;
-}
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
 
 #txtTarefa{
     font-size: 18px;
 }
 
-.quadro-tarefa {
-    padding: 10px 10px 0px 10px;
-}
-
 .quadro-geral {
+    padding: 15px 10px 10px 10px;
     background-color: #f9f9f9;
     height: 500px;
     overflow-y: auto;
@@ -47,7 +42,6 @@ ul li span {
 
 .list-group-item{
     margin-top: 8px;
-    padding: 10px 5px !important;
 }
 
 li:hover {
@@ -64,3 +58,13 @@ ul:hover{
 .botao-editar{
     margin-right: 8px;
 }
+
+@media (min-width: 576px) {
+
+ }
+
+@media (min-width: 768px) { }
+
+@media (min-width: 992px) { }
+
+@media (min-width: 1200px) {    }
