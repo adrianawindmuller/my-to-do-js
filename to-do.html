@@ -21,18 +21,18 @@
     <title>My To-do</title>
 
 </head>
-<img src="/images/logo-tipo.png" alt="Responsive image" class="img-fluid rounded mx-auto d-block">
+    <img src="/images/logo-tipo.png" alt="Responsive image" class="img-fluid rounded mx-auto d-block logo-tipo col-8 col-sm-4 col-md-4 col-lg-3 col-xl-3">
 
 <body onload="onLoad()">
     <div class="container">
         <div class="row">
-            <div class="mx-auto col-sm-4 quadro-geral">
+            <div class="mx-auto col-10 col-sm-6 col-md-6 col-lg-4 col-xl-4 quadro-geral">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" name="terefa" id="txtTarefa" placeholder="Insira uma tarefa"
                         required onkeypress="presionarEnterTarefa(event)" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button type="button" class="btn btn-primary" id="button-addon2"
-                            onclick="criarTarefa()"><i class="fa fa-plus"></i></button>
+                        <button type="button" class="btn btn-primary" id="button-addon2" onclick="criarTarefa()"><i
+                                class="fa fa-plus"></i></button>
                     </div>
                 </div>
                 <ul class="list-group list-group-flush" id="ul-lista-tarefas"></ul>

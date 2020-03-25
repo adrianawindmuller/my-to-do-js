@@ -4,6 +4,10 @@ body {
     background-position: center;
 }
 
+.logo-tipo{
+    padding: 20px 0px;
+}
+
 .selector-for-some-widget {
     box-sizing: content-box;
   }
@@ -58,13 +62,3 @@ ul:hover{
 .botao-editar{
     margin-right: 8px;
 }
-
-@media (min-width: 576px) {
-
- }
-
-@media (min-width: 768px) { }
-
-@media (min-width: 992px) { }
-
-@media (min-width: 1200px) {    }
