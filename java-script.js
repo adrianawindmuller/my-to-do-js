@@ -59,6 +59,8 @@ function alterarTextoTarefa(li, descricaoTarefa) {
     let inputTexto = document.createElement('input');
     inputTexto.value = descricaoTarefa;
     inputTexto.classList.add('editar-tarefa', 'form-control');
+    inputTexto.setAttribute('maxlength','22');
+
     inputTexto.onkeypress = function (event) {
         if (event.keyCode == 13) {
             alternarModoEdicaoTarefa(false, li);
