@@ -29,15 +29,15 @@ function criarTarefa() {
 }
 
 function presionarEnterTarefa(event) {
+    let tarefa = document.getElementById('txtTarefa');
     if (event.keyCode == 13) {
         criarTarefa();
-        document.getElementById('txtTarefa').value = ""
-
+        tarefa.value = "";
     }
 }
 
 function textoTarefaEstaVazio() {
-    let tarefa = document.getElementById('txtTarefa').value;
+   let tarefa = document.getElementById('txtTarefa').value;
     return (tarefa.length == 0);
 }
 

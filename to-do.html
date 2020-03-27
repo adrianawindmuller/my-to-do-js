@@ -21,30 +21,31 @@
     <title>My To-do</title>
 
 </head>
-    <img src="/images/logo-tipo.png" alt="Responsive image" class="img-fluid rounded mx-auto d-block logo-tipo col-8 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+<img src="./images/logo-tipo.png" alt="Responsive image"
+    class="img-fluid rounded mx-auto d-block logo-tipo col-8 col-sm-4 col-md-4 col-lg-3 col-xl-3">
 
 <body onload="onLoad()">
     <div class="container">
         <div class="row">
             <div class="mx-auto col-10 col-sm-6 col-md-6 col-lg-4 col-xl-4 quadro-geral">
-                <div class="input-group mb-3">
+                <form class="input-group mb-3" onsubmit="return false" >
                     <input type="text" class="form-control" name="terefa" id="txtTarefa" placeholder="Insira uma tarefa"
-                        required onkeypress="presionarEnterTarefa(event)" aria-describedby="button-addon2" maxlength="22">
+                        onkeypress="presionarEnterTarefa(event)" aria-describedby="button-addon2" maxlength="22">
                     <div class="input-group-append">
-                        <button type="button" class="btn btn-primary" id="button-addon2" onclick="criarTarefa()"><i
-                                class="fa fa-plus"></i></button>
+                        <button type="button" class="btn btn-primary" id="button-addon2" onclick="criarTarefa()">
+                            <i class="fa fa-plus"></i>
+                        </button>
                     </div>
-                </div>
+                </form>
                 <ul class="list-group list-group-flush" id="ul-lista-tarefas"></ul>
             </div>
         </div>
     </div>
-    </div>
 
     <!-- Bootstrap js -->
+    <script src="./node_modules/jquery/dist/jquery.slim.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="./node_modules/bootstrap/js/dist/popover.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 </body>
 
 </html>
