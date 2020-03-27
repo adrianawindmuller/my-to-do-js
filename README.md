@@ -17,6 +17,7 @@
 - Criar, alterar e excluir tarefa (CRUD)
 - Concluir tarefa
 - Reordenar tarefa(drag and drop)
+- Responsivo
 
 
 
